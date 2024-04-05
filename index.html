@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Fotoğraf Görüntüleme</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center mb-4">Sümeyra'nın Fotoğraf Galerisi</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <img src="resim1.jpg" class="img-fluid mb-3" alt="Fotoğraf 1" onclick="showModal('resim1.jpg')">
+    </div>
+    <div class="col-md-4">
+        <img src="resim2.jpg" class="img-fluid mb-3" alt="Fotoğraf 1" onclick="showModal('resim2.jpg')">
+      </div>
+      <div class="col-md-4">
+        <img src="resim3.jpg" class="img-fluid mb-3" alt="Fotoğraf 1" onclick="showModal('resim3.jpg')">
+      </div>
+      <div class="col-md-4">
+        <img src="resim4.jpg" class="img-fluid mb-3" alt="Fotoğraf 1" onclick="showModal('resim4.jpg')">
+      </div>
+      <div class="col-md-4">
+        <img src="resim5.jpg" class="img-fluid mb-3" alt="Fotoğraf 1" onclick="showModal('resim5.jpg')">
+      </div>
+      <div class="col-md-4">
+        <img src="resim6.jpg" class="img-fluid mb-3" alt="Fotoğraf 1" onclick="showModal('resim6.jpg')">
+      </div>
+      <div class="col-md-4">
+        <img src="resim7.jpg" class="img-fluid mb-3" alt="Fotoğraf 1" onclick="showModal('resim7.jpg')">
+      </div>
+      <div class="col-md-4">
+        <img src="resim8.jpg" class="img-fluid mb-3" alt="Fotoğraf 1" onclick="showModal('resim8.jpg')">
+      </div>
+      <div class="col-md-4">
+        <img src="resim9.jpg" class="img-fluid mb-3" alt="Fotoğraf 1" onclick="showModal('resim9.jpg')">
+      </div>
+    
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  function showModal(imageSrc) {
+    var modalContent = '<div class="modal" id="imageModal" tabindex="-1" role="dialog">';
+    modalContent += '<div class="modal-dialog" role="document">';
+    modalContent += '<div class="modal-content">';
+    modalContent += '<div class="modal-body">';
+    modalContent += '<img src="' + imageSrc + '" class="img-fluid">';
+    modalContent += '</div>';
+    modalContent += '<div class="modal-footer">';
+    modalContent += '<button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>';
+    modalContent += '</div></div></div></div>';
+    
+    // Modalı body elementine ekle
+    $('body').append(modalContent);
+    
+    // Modalı göster
+    $('#imageModal').modal('show');
+    
+    // Modal kapatıldığında temizle
+    $('#imageModal').on('hidden.bs.modal', function (e) {
+      $(this).remove();
+    });
+  }
+</script>
+
+</body>
+</html>
